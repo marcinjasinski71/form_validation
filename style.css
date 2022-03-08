@@ -56,3 +56,74 @@ h1 {
 	border: 1px solid rgb(250, 0, 0);
 	background-color: rgba(250, 8, 0, 0.1);
 }
+
+.form-box .error-text {
+	margin: 5px 0 0 10px;
+	visibility: hidden;
+	font-size: 15px;
+	color: rgb(250, 0, 0);
+}
+
+.form-box.error .error-text {
+	visibility: visible;
+}
+.control-buttons {
+	display: flex;
+	justify-content: center;
+}
+
+.send,
+.clear,
+.close {
+	display: block;
+	padding: 10px 0;
+	margin-left: 10px;
+	width: 100px;
+	font-size: 18px;
+	background-color: #2e9db6;
+	color: #fff;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+.send {
+	background-color: #207183;
+}
+
+.send:hover,
+.clear:hover,
+.close:hover {
+	background-color: #113841;
+}
+
+.popup {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	position: absolute;
+	text-align: center;
+	top: -300px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 350px;
+	height: 200px;
+	font-size: 20px;
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+	transition: top 0.5s;
+}
+
+.close {
+	margin-top: 20px;
+}
+
+.popup p {
+	font-size: 23px;
+}
+
+.show-popup {
+	top: 150px;
+}
