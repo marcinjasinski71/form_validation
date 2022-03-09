@@ -12,5 +12,6 @@ Form Validator created by Marcin Jasiński
 >3. Click Clear button if you want to clear your form,
 >4. If you want to valid your form - just press Send button - it's so simple !
 >5. Have fun:)
-> Tech used -  CSS, HTML, JavaScript
-<b>Verify your form !</b>
+><b>Verify your form !</b>
+Tech used -  CSS, HTML, JavaScript
+
