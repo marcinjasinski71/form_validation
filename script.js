@@ -33,6 +33,7 @@ const checkForm = input => {
 // argument INPUT z funkcji checkForm przechowuję tablicę z naszymi inputami
 // argument EL odnosi się do kazdej zmiennej ktora umiescilismy w tablicy
 
+
 const checkLength = (input, min) => {
 	if (input.value.length < min) {
 		showError(
@@ -44,13 +45,25 @@ const checkLength = (input, min) => {
 		);
 	}
 };
-
+// passcheck
 const checkPassword = (pass1, pass2) => {
 	if (pass1.value !== pass2.value) {
 		showError(pass2, `Passwords does not match.`);
 	}
 };
+// mailcheck
+const checkMail = email => {
+	const re =
+		/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,3}))$/;
 
+	if (re.test(email.value)) {
+		clearError(email);
+	} else {
+		showError(email, `E-mail address is not valid. `);
+	}
+};
+
+// =============================================================================
 // button do wysyłania, klik -> event -> prevent default zeby nie przeladowywal strony za kazdym razem, nastepnie funkcje sprawdzające nasze inputy
 sendBtn.addEventListener(`click`, e => {
 	e.preventDefault();
@@ -59,6 +72,7 @@ sendBtn.addEventListener(`click`, e => {
 	checkLength(username, 6);
 	checkLength(pass, 8);
 	checkPassword(pass, pass2);
+	checkMail(email);
 });
 
 // clearbtn -> czyszczenie kazdego inputa username pass pass2 email -> element value robimy na pusto
