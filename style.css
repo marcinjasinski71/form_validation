@@ -15,7 +15,6 @@ body {
 
 .wrapper {
 	width: 375px;
-	min-height: 650px;
 	background-color: rgba(216, 227, 231, 0.8);
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
 }
@@ -60,10 +59,10 @@ h1 {
 }
 
 .form-box .error-text {
-	text-align: center;
+	/* text-align: center; */
 	margin: 5px 0 0 10px;
 	visibility: hidden;
-	font-size: 14px;
+	font-size: 13px;
 	color: rgb(250, 0, 0);
 }
 
