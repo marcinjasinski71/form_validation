@@ -130,3 +130,136 @@ h1 {
 .show-popup {
 	top: 150px;
 }
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	font-family: 'Montserrat', sans-serif;
+	background-image: linear-gradient(300deg, #126e82 0%, #132c33 74%);
+}
+
+.wrapper {
+	width: 375px;
+	background-color: rgba(216, 227, 231, 0.8);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+form {
+	position: relative;
+	padding: 20px;
+	font-size: 20px;
+}
+.logo {
+	position: absolute;
+	top: 10px;
+	left: 110px;
+}
+
+h1 {
+	margin-top: 10px;
+	margin-bottom: 30px;
+	text-align: center;
+	font-size: 30px;
+}
+
+.form-box {
+	margin-bottom: 15px;
+}
+
+.form-box label {
+	display: inline-block;
+	margin-bottom: 5px;
+}
+.form-box input {
+	width: 100%;
+	padding: 10px;
+	font-size: 16px;
+	border: 1px solid rgb(197, 197, 197);
+	border-radius: 5px;
+}
+
+.form-box.error input {
+	border: 1px solid rgba(250, 0, 0, 0.267);
+	background-color: rgba(250, 8, 0, 0.075);
+}
+
+.form-box .error-text {
+	/* text-align: center; */
+	margin: 5px 0 0 10px;
+	visibility: hidden;
+	font-size: 13px;
+	color: rgb(250, 0, 0);
+}
+
+.form-box.error .error-text {
+	visibility: visible;
+}
+.control-buttons {
+	margin-top: 20px;
+	display: flex;
+	justify-content: center;
+}
+
+.send,
+.clear,
+.close {
+	display: block;
+	padding: 10px 0;
+	margin-left: 10px;
+	width: 100px;
+	font-size: 18px;
+	background-color: #2e9db6;
+	color: #fff;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+.send {
+	background-color: #207183;
+}
+
+.send:hover,
+.clear:hover,
+.close:hover {
+	background-color: #113841;
+}
+
+.popup {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	position: absolute;
+	text-align: center;
+	top: -300px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 350px;
+	height: 200px;
+	font-size: 20px;
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+	transition: top 0.5s;
+}
+
+.close {
+	margin-top: 20px;
+}
+
+.popup p {
+	font-size: 23px;
+}
+
+.show-popup {
+	top: 150px;
+}
