@@ -62,6 +62,21 @@ const checkMail = email => {
 	}
 };
 
+// sprawdznie errorow za pomoca ilosci dodanych klas .error -> pobralismy inputy, jezeli ktorys z nich posiada klase error, inkrementujemy nasz errorCount -> jezeli errorCount === 0 -> dodajemy klase show.popup do naszego popupa
+const checkErrors = () => {
+	const allInputs = document.querySelectorAll(`.form-box`);
+	let errorCount = 0;
+	allInputs.forEach(el => {
+		if (el.classList.contains(`error`)) {
+			errorCount++;
+		}
+	});
+
+	if (errorCount === 0) {
+		popup.classList.add(`show-popup`);
+	}
+};
+
 // =============================================================================
 // button do wysyłania, klik -> event -> prevent default zeby nie przeladowywal strony za kazdym razem, nastepnie funkcje sprawdzające nasze inputy
 sendBtn.addEventListener(`click`, e => {
@@ -72,6 +87,7 @@ sendBtn.addEventListener(`click`, e => {
 	checkLength(pass, 8);
 	checkPassword(pass, pass2);
 	checkMail(email);
+	checkErrors();
 });
 
 // clearbtn -> czyszczenie kazdego inputa username pass pass2 email -> element value robimy na pusto
@@ -80,5 +96,6 @@ clearBtn.addEventListener(`click`, e => {
 
 	[username, pass, pass2, email].forEach(el => {
 		el.value = '';
+		clearError(el);
 	});
 });
