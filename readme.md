@@ -6,7 +6,7 @@
 Form Validator created by Marcin Jasiński
 📝✔️❌Form Validator created by Marcin Jasiński📝✔️❌
 
-> Tech used - Simple CSS, HTML, JavaScript
+
 >1. Please enter your user name, password (with repeat) and your e-mail,
 >2. Follow instructions if your data is too short or your passwords doesn't match,
 >3. Click Clear button if you want to clear your form,
