@@ -33,7 +33,6 @@ const checkForm = input => {
 // argument INPUT z funkcji checkForm przechowuję tablicę z naszymi inputami
 // argument EL odnosi się do kazdej zmiennej ktora umiescilismy w tablicy
 
-
 const checkLength = (input, min) => {
 	if (input.value.length < min) {
 		showError(
