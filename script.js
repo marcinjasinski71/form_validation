@@ -33,12 +33,35 @@ const checkForm = input => {
 // argument INPUT z funkcji checkForm przechowuję tablicę z naszymi inputami
 // argument EL odnosi się do kazdej zmiennej ktora umiescilismy w tablicy
 
+const checkLength = (input, min) => {
+	if (input.value.length < min) {
+		showError(
+			input,
+			`${input.previousElementSibling.innerText.slice(
+				0,
+				-1
+			)} must contain minimum ${min} characters`
+		);
+	}
+};
+
+const checkPassword = (pass1, pass2) => {
+	if (pass1.value !== pass2.value) {
+		showError(pass2, `Passwords does not match.`);
+	}
+};
+
+// button do wysyłania, klik -> event -> prevent default zeby nie przeladowywal strony za kazdym razem, nastepnie funkcje sprawdzające nasze inputy
 sendBtn.addEventListener(`click`, e => {
 	e.preventDefault();
 
 	checkForm([username, pass, pass2, email]);
+	checkLength(username, 6);
+	checkLength(pass, 8);
+	checkPassword(pass, pass2);
 });
 
+// clearbtn -> czyszczenie kazdego inputa username pass pass2 email -> element value robimy na pusto
 clearBtn.addEventListener(`click`, e => {
 	e.preventDefault();
 
