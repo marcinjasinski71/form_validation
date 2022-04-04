@@ -7,9 +7,6 @@ const clearBtn = document.querySelector(`.clear`);
 const popup = document.querySelector(`.popup`);
 
 const showError = (input, msg) => {
-	//argument INPUT prechowuje nasze INPUTY
-	//agrument MSG przechowuje placeholder w inputach
-
 	const formBox = input.parentElement;
 	const errorMsg = formBox.querySelector(`.error-text`);
 	formBox.classList.add('error');
@@ -30,8 +27,6 @@ const checkForm = input => {
 		}
 	});
 };
-// argument INPUT z funkcji checkForm przechowuję tablicę z naszymi inputami
-// argument EL odnosi się do kazdej zmiennej ktora umiescilismy w tablicy
 
 const checkLength = (input, min) => {
 	if (input.value.length < min) {
@@ -44,13 +39,13 @@ const checkLength = (input, min) => {
 		);
 	}
 };
-// passcheck
+
 const checkPassword = (pass1, pass2) => {
 	if (pass1.value !== pass2.value) {
 		showError(pass2, `Passwords does not match.`);
 	}
 };
-// mailcheck
+
 const checkMail = email => {
 	const re =
 		/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,3}))$/;
@@ -62,7 +57,6 @@ const checkMail = email => {
 	}
 };
 
-// sprawdznie errorow za pomoca ilosci dodanych klas .error -> pobralismy inputy, jezeli ktorys z nich posiada klase error, inkrementujemy nasz errorCount -> jezeli errorCount === 0 -> dodajemy klase show.popup do naszego popupa
 const checkErrors = () => {
 	const allInputs = document.querySelectorAll(`.form-box`);
 	let errorCount = 0;
@@ -77,8 +71,6 @@ const checkErrors = () => {
 	}
 };
 
-// =============================================================================
-// button do wysyłania, klik -> event -> prevent default zeby nie przeladowywal strony za kazdym razem, nastepnie funkcje sprawdzające nasze inputy
 sendBtn.addEventListener(`click`, e => {
 	e.preventDefault();
 
@@ -90,7 +82,6 @@ sendBtn.addEventListener(`click`, e => {
 	checkErrors();
 });
 
-// clearbtn -> czyszczenie kazdego inputa username pass pass2 email -> element value robimy na pusto
 clearBtn.addEventListener(`click`, e => {
 	e.preventDefault();
 
